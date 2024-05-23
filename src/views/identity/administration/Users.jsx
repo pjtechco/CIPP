@@ -428,6 +428,13 @@ const Users = (row) => {
           title="Invite Guest"
         />
       </div>
+      <div style={{ marginLeft: '10px' }}>
+        <TitleButton
+          key="Invite-Bulk"
+          href="/identity/administration/users/addbulk"
+          title="Bulk Add"
+        />
+      </div>
     </div>
   )
 
@@ -473,6 +480,7 @@ const Users = (row) => {
             'id,accountEnabled,businessPhones,city,createdDateTime,companyName,country,department,displayName,faxNumber,givenName,isResourceAccount,jobTitle,mail,mailNickname,mobilePhone,onPremisesDistinguishedName,officeLocation,onPremisesLastSyncDateTime,otherMails,postalCode,preferredDataLocation,preferredLanguage,proxyAddresses,showInAddressList,state,streetAddress,surname,usageLocation,userPrincipalName,userType,assignedLicenses,onPremisesSyncEnabled',
           $count: true,
           $orderby: 'displayName',
+          $top: 999,
         },
         tableProps: {
           keyField: 'id',
